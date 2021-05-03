@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Titration Analysis</title>
+    <meta charset="UTF-8">
+
+      <style>
+            table tr:not(:first-child){
+                cursor: pointer;transition: all .25s ease-in-out;
+            }
+            table tr:not(:first-child):hover{background-color: #ddd;}
+            
+            table tr:not(:only-child){
+                cursor: pointer;transition: all .25s ease-in-out;
+            }
+            table tr:not(:only-child):hover{background-color: #ddd;}
+
+            table{
+	       margin-top: 50px;
+        	text-align: center;
+        	background: #333;
+        	color: #fff;
+           }
+
+             #show th, #show td{
+	           padding: 13px;
+            }
+
+              #btna td input{
+	            width: 100%;
+              } 
+              
+
+               h2{
+                   font-family:monospace;
+                  color: #fff;
+                  text-align:center;
+                  width: 150px;
+                  opacity::0.6;
+                  border:5px solid #f1f1f1;
+                  background-color: #232323;
+                  padding: 10px;
+                  margin: 10px;
+                  /*color: #fff;
+                  background-color: #696969;                
+                 box-sizing: 10px 5px;*/}
+               #eq{
+                  
+                  color: #ec7f37;
+                  backgroung-color: #696969;
+                  padding:5px 4px;
+                  margin-bottom: 9px;
+                  padding-left:45%;}
+               #st{
+                  padding-left:40%;}
+               #cl{
+                  padding-left:3.8%;}
+
+                #ig{
+                   position:absolute
+                   top: 500px;
+                   
+                   height:700px;
+                   
+                   background-image:url("fullanimated2.gif");
+                   background-repeat: no-repeat;}
+               
+                #im{
+                    background-image: "2.png";
+                    position: absolute;
+                    right: 50%;
+                    width: 100px;
+                    zindex: 1;
+                    }
+
+
+
+
+
+
+                body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("2.jpg");
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 50%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+                 
+     .main {
+         background-color: none;}
+
+
+
+       </style>
+    
+</head>
+
+
+
+
+
+<body class="main">
+       <div class="bg-image"></div>
+
+       <div class="bg-text">
+       <h1>Titration of Oxalic Acid with KMnO4</h1>
+       
+       </div>
+
+
+    
+       <h2>Aim</h2>
+       <p>To determine the strength of potassium permanganate by titrating it against the standard solution of 0.1M oxalic acid.</p> 
+        
+       <h2>Theory</h2>
+       <p>Equations you should know about the experiment.<br /><br>
+       <u>The chemical reaction at room temperature is given below.</u>
+       <div id="eq"><p>Reduction Half reaction:-</div>
+       <div id="st">2KMnO4 + 3H2SO4 → K2SO4 + 2MnSO4 + 3H2O + 5[O]</div><br />
+
+       <div id="eq">Oxidation Half reaction:-</div> 
+       <div id="st">5(COOH)2 + 5[O] → 5H2O + 10CO2↑</div><br />
+
+       <u>The overall reaction takes place in the process is</u><br />
+
+       <div id="eq">Overall reaction:-</div>
+       <div id="st"> 2KMnO4 + 3H2SO4 + 5(COOH)2 → K2SO4 + 2MnSO4 + 8H2O + 10CO2↑</div><br />
+
+        <u>The ionic equation involved in the process is given below.</u><br />
+
+        <div id="eq">Reduction Half reaction:-</div>
+        <div id="st"> MnO4– + 8H+ + 5e– → Mn2+ + 4H2O</div><br />
+
+        <div id="eq">Oxidation Half reaction:-</div>
+        <div id="st"> C2H42- → 2CO2 + 2e– </div><br />
+
+        <div id="eq">Overall Ionic reaction:-</div> 
+        <div id="st">2MnO4– + 16H+ + 5C2H42- → 2Mn2+ + 10CO2 + 8H2O</div></p>
+
+   
+       <div data-text="creative"><h3><u>How the process run?</u></h3></div>
+       <nav>
+          <ol> 
+             <li>Rinse the burette with the potassium permanganate solution and fill the burette with potassium permanganate solution.</li>
+             <li>Fix the burette in the burette stand and place the white tile below the burette in order to find the end point correctly.</li>
+             <li>Pipette out 10ml of 0.1N standard oxalic acid solution in a conical flask.</li>
+             <li>Add a test tube full of sulfuric acid in order to prevent oxidation of manganese to form manganese dioxide.</li>
+             <li>Heat the mixture upto 60 degree Celsius before titrating with potassium permanganate.</li>
+             <li>Note down the initial reading in the burette before starting the titration.</li>
+             <li>The hot solution is titrated against potassium permanganate solution and simultaneously swirl the solution in the flask gently.</li>
+             <li>Initially the purple colour of KMnO4 is discharged with oxalic acid. The appearance of permanent pink colour reveals the end point.</li>
+             <li>Repeat the titration until concordant values are obtained.</li>
+             <li>Note down the upper meniscus on the burette readings.</li>
+          </ol> 
+       </nav>
+       </div>
+   <center>
+
+   <div id="ig"><br><br><br><br>
+      
+      </div>
+
+   </center>
+   <div>
+     <h2>Calculations</h2>
+     <p>To calculate the strength of given KMnO4 in terms of molarity the following formula is used<br>
+     <div id="cl">a1M1V1 = a2M2V2</div><br>
+     Where- <br>
+    <ul>
+       <li>a1 and a2 are stoichiometric coefficient</li><br>
+       <li>M2 and M1 are molarities </li><br>
+       <li>V2 and V1 are the volume</li> <br></ul>
+     Therefore,<br>
+
+     <div id="cl">KMnO4 = Oxalic acid</div><br>
+
+     <div id="cl">5M2V2 = 2M1V1</div><br>
+
+     <div id="cl">M2 = (2M1V1/5M2V2)</div><br>
+      The strength of KMnO4 is calculated by using the molarity.<br>
+
+       <div id="cl">Strength = Molarity x Molar mass</div></p><br />
+     <h3>NOTE:</h3>
+     <p> Record the reading in the observation table given below in order to calculate the molarity of KMnO4 given.</p>
+     <h2>Observation:</h2> 
+
+
+	<center>
+		<table border="4">
+			<thead>
+
+                               <tr>
+                                      <th>S.NO.</th>
+                                      <td><input type="text" name="sno." id="sno."></td></tr>
+				<tr>
+					<th>volume of oxlic acid</th>
+					<td><input type="text" name="volume" id="volume"></td>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr>
+					<th>initial</th>
+					<td><input type="text" name="initial" id="initial"></td>
+				</tr>
+				<tr>
+					<th>final</th>
+					<td><input type="text" name="final" id="final"></td>
+				</tr>
+				<tr>
+					<th>volume of kmno4 used [v=(y-x)ml]</th>
+					<td><input type="text" name="tvolume" id="tvolume"></td>
+				</tr>
+				<tr id="btna">
+					<td colspan="2"><input type="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+  
+    <center>
+    <table border="1" id="show">
+        <thread>
+         <tr>
+            <th>S.NO.</th><th>Volume of oxalic acid in ml</th>
+            <th colspan="2">Burette Reading</th>
+            <th>Volume of KMnO4 used [V=(y-x)ml]</th>
+         </tr>
+ 
+         <tr><th>&nbsp;</th>
+            <th scope="row">&nbsp;</th>
+            <td>Initial(x)</td><td>Final(y)</td>
+            <th>&nbsp;</th>
+         </tr>
+        </thread>
+         
+
+          
+
+
+
+         </table>
+        </center>
+
+         
+
+
+
+
+
+
+
+
+
+	<script>
+		var list0 = [];
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		var list4 = [];
+                
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n+1);
+
+			list0[x] = document.getElementById("sno.").value;
+			list1[x] = document.getElementById("volume").value;
+			list2[x] = document.getElementById("initial").value;
+			list3[x] = document.getElementById("final").value;
+			list4[x] = document.getElementById("tvolume").value;
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+			var cel4 = NewRow.insertCell(3);
+                        var cel5 = NewRow.insertCell(4);
+
+                        cel1.innerHTML = list0[x];
+			cel2.innerHTML = list1[x];
+			cel3.innerHTML = list2[x];
+			cel4.innerHTML = list3[x];
+			cel5.innerHTML = list4[x];
+
+			n++;
+			x++;
+		}
+
+	</script>
+  
+   </div>      
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
