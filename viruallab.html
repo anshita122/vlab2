@@ -34,6 +34,7 @@
                h2{
                    font-family:monospace;
                   color: #fff;
+                  box-align:center;
                   text-align:center;
                   width: 150px;
                   opacity::0.6;
@@ -57,20 +58,96 @@
                   padding-left:3.8%;}
 
                 #ig{
-                   position:absolute
-                   top: 500px;
+                   position:relative;
+                   top: 0px;
                    
                    height:700px;
                    
-                   background-image:url("fullanimated2.gif");
+                   background-image:url("demo.png");
                    background-repeat: no-repeat;}
+
+                    #drop{
+                      position:absolute;
+                      top: 500px;
+                      left: 288px;
+                      width:50px;
+                      height:70px;
+                      background-image:url("Drop.png");
+                   background-repeat: no-repeat;
+                     z-index:4;
+                                        display:none;
+                   animation: dropThedrop 1s infinite ease-in;
+                   }
+         
+                 #fluid {
+    position: absolute;
+    width: 18px;
+    height: 290px;
+    top: 100px;
+    left: 286px;
+    background-color: rgb(255,0,128);
+    border-radius: 5px 5px 0 0;
+                    }
+
+                 #fluid-1{
+                      content: "";
+                      position: absolute;
+                      top: 290px;
+                      width: 10px;
+                      height: 20px;
+                      left: 5px;
+                      background-color: rgb(255,0,128);
+                  }
+
+
+                   @keyframes dropThedrop{
+                      0%{
+                          top: 500px;
+                      }
+                      100%{
+                          top: 610px;
+                      }
+                   }
+                   #brush{
+                      position:absolute;
+                      top: 650px;
+                      left: 288px;
+                      width:50px;
+                      height:70px;
+                      background-image:url("brush.png");
+                   background-repeat: no-repeat;
+                    
+                                        display:none;
+                   animation: dropdown 1s infinite ease-in;
+                   }
+                 /* @keyframes dropdown{
+                      0%{
+                          top: 645px;
+                      }
+                       100%{
+                          top: 650px;
+                      }
+                   }*/
+                   
+                   
+               #knob{
+                  position: absolute;
+                  opacity:0.2;
+                  border-style: none;
+                  width: 80px;
+                  height: 50px;
+                  top:410px;
+                  left: 270px;
+                   z-index:3;
+
+               }
                
                 #im{
                     background-image: "2.png";
                     position: absolute;
                     right: 50%;
                     width: 100px;
-                    zindex: 1;
+                    z-index: 1;
                     }
 
 
@@ -190,8 +267,12 @@
        </div>
    <center>
 
-   <div id="ig"><br><br><br><br>
-      
+   <div id="ig">
+         <div id="fluid"></div>
+         <div id="<br><br><br><br>
+                   <button id= "knob" onclick="dropIt()"></button>
+      <div id="drop"></div>
+      <div id="brush"></div>
       </div>
 
    </center>
@@ -325,7 +406,46 @@
 			n++;
 			x++;
 		}
-
+var flag=true;
+var fluid = document.getElementById("fluid");
+var interval;
+function emptyburette(){
+      var ele1 = document.getElementById("drop");
+      ele1.style.display="none";
+ }
+      function dropIt(){
+         var ele1 = document.getElementById("drop");
+         console.log(ele1);
+         var ele2 = document.getElementById("brush");
+         console.log(ele2);
+         if(flag==true){
+         ele1.style.display= "block";
+         ele2.style.display= "block";
+          var top= 100;      
+      var count = 58;
+      interval= setInterval(function(){
+                count--;
+                top = top+5;
+              
+                if(count <= 0){
+                    emptyburette();
+                    clearInterval(interval);
+        
+                 }
+                
+                fluid.style.height=count*5+"px";
+                 fluid.style.top=top+"px";
+           },1000);
+          
+      flag=false;}
+      else{
+         clearInterval(interval);
+         ele1.style.display= "none";
+         ele2.style.display= "none";
+         flag=true;
+      }
+     
+      }
 	</script>
   
    </div>      
