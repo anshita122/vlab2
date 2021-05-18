@@ -63,8 +63,23 @@
                    
                    height:700px;
                    
-                   background-image:url("demo.png");
-                   background-repeat: no-repeat;}
+                   background-image:url("final.png");
+                   background-repeat: no-repeat;
+                   z-index: 5;
+                   }
+                 #flask{
+                    position: relative;
+                    top:420px;
+                    left:0px;
+                    height: 3px;
+                    z-index:1;               
+                    background-repeat: no-repeat;
+                    }
+
+                  .shakeimage{
+                        position:relative
+                         
+                   }
 
                     #drop{
                       position:absolute;
@@ -73,29 +88,30 @@
                       width:50px;
                       height:70px;
                       background-image:url("Drop.png");
-                   background-repeat: no-repeat;
+                      background-repeat: no-repeat;
                      z-index:4;
-                                        display:none;
+                      display:none;
                    animation: dropThedrop 1s infinite ease-in;
                    }
          
                  #fluid {
-    position: absolute;
-    width: 18px;
-    height: 290px;
-    top: 100px;
-    left: 286px;
-    background-color: rgb(255,0,128);
-    border-radius: 5px 5px 0 0;
+                     position: absolute;
+                     width: 18px;
+                     height: 290px;
+                     top: 100px;
+                     left: 286px;
+                     background-color: rgb(255,0,128);
+                     border-radius: 5px 5px 0 0;
+                     z-index: 0;
                     }
 
                  #fluid-1{
                       content: "";
                       position: absolute;
-                      top: 290px;
+                      top: 386px;
                       width: 10px;
                       height: 20px;
-                      left: 5px;
+                      left: 290px;
                       background-color: rgb(255,0,128);
                   }
 
@@ -116,7 +132,7 @@
                       height:70px;
                       background-image:url("brush.png");
                    background-repeat: no-repeat;
-                    
+                      z-index:2;
                                         display:none;
                    animation: dropdown 1s infinite ease-in;
                    }
@@ -266,14 +282,16 @@
        </nav>
        </div>
    <center>
-
+   
    <div id="ig">
          <div id="fluid"></div>
-         <div id="<br><br><br><br>
+         <div id="fluid-1"></div><br><br><br><br>
                    <button id= "knob" onclick="dropIt()"></button>
       <div id="drop"></div>
       <div id="brush"></div>
+       <div id="flask"><img src="fl.png" class="shakeimage" onMouseover="init(this);rattleimage()" onMouseout="stoprattle(this);top.focus()" onClick="top.focus()"></div>
       </div>
+   
 
    </center>
    <div>
@@ -446,6 +464,52 @@ function emptyburette(){
       }
      
       }
+
+
+/*shake the flask*/
+var rector=3
+
+///////DONE EDITTING///////////
+var stopit=0 
+var a=1
+
+function init(which){
+stopit=0
+shake=which         
+shake.style.left=0
+shake.style.top=0
+}
+
+function rattleimage(){
+                        
+if ((!document.all&&!document.getElementById)||stopit==1)
+return
+if (a==1){
+shake.style.top=parseInt(shake.style.top)+rector+"px"
+}
+else if (a==2){
+shake.style.left=parseInt(shake.style.left)+rector+"px"
+}
+else if (a==3){
+shake.style.top=parseInt(shake.style.top)-rector+"px"
+}
+else{
+shake.style.left=parseInt(shake.style.left)-rector+"px"
+}
+if (a<4)
+a++
+else
+a=1
+setTimeout("rattleimage()",50)
+}
+
+function stoprattle(which){
+stopit=1
+which.style.left=0
+which.style.top=0
+}
+
+
 	</script>
   
    </div>      
